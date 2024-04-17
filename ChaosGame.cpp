@@ -44,6 +44,10 @@ int main()
 
         // Load a graphic into the texture
         Texture textureBackground;
+        if (!textureBackground.loadFromFile("Gundam.otf"))
+        {
+            cout << "Can't load the background file." << endl;
+        }
         textureBackground.loadFromFile("gundam_rx_78_2.png");
         Sprite spriteBackground;
         spriteBackground.setTexture(textureBackground);
