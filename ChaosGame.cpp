@@ -37,6 +37,17 @@ int main()
         text1.setFillColor(Color::White);
         window.clear();
         window.draw(text1);
+
+        Texture textureBackground;
+        // Load a graphic into the texture
+        textureBackground.loadFromFile("gundam_rx_78_2.png");
+        Sprite spriteBackground;
+        // Attach the texture to the sprite
+        spriteBackground.setTexture(textureBackground);
+        // Set the spriteBackground to cover the screen
+        spriteBackground.setPosition(0, 0);
+        window.draw(spriteBackground);
+
         /*
         ****************************************
         Handle the players input
@@ -84,13 +95,17 @@ int main()
 
         if (points.size() > 0)
         {
-            ///generate more point(s)
-            ///select random vertex
-            ///calculate midpoint between random vertex and the last point in the vector
-            ///push back the newly generated coord.
-            int random_index = rand() % vertices.size();
-            Vector2f mid_point = (vertices[random_index] + points.back()) / (float)2;
-            points.push_back(mid_point);
+            for (int i = 0; i < 72; i++)
+            {
+                ///generate more point(s)
+                ///select random vertex
+                ///calculate midpoint between random vertex and the last point in the vector
+                ///push back the newly generated coord.
+                int random_index = rand() % vertices.size();
+                //Vector2f mid_point = (vertices[random_index] + points.back()) / (float)2;
+                Vector2f mid_point = (vertices[random_index] + points.back()) * 0.5f;
+                points.push_back(mid_point);
+            }
         }
         /*
         ****************************************
