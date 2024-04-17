@@ -42,13 +42,11 @@ int main()
         window.clear();
         window.draw(text1);
 
-        Texture textureBackground;
         // Load a graphic into the texture
+        Texture textureBackground;
         textureBackground.loadFromFile("gundam_rx_78_2.png");
         Sprite spriteBackground;
-        // Attach the texture to the sprite
         spriteBackground.setTexture(textureBackground);
-        // Set the spriteBackground to cover the screen
         spriteBackground.setPosition(0, 0);
         window.draw(spriteBackground);
 
@@ -115,7 +113,6 @@ int main()
         Draw
         ****************************************
         */
-        //window.clear();
         for (int i = 0; i < vertices.size(); i++)
         {
             RectangleShape rect(Vector2f(3, 3));
