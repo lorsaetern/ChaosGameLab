@@ -1,3 +1,7 @@
+//Chaos Game Lab
+//Group: Lor saetern & Jesus Catanghal
+
+
 // Include important C++ libraries here
 #include <SFML/Graphics.hpp>
 #include <SFML/Audio.hpp>
@@ -102,8 +106,7 @@ int main()
                 ///calculate midpoint between random vertex and the last point in the vector
                 ///push back the newly generated coord.
                 int random_index = rand() % vertices.size();
-                //Vector2f mid_point = (vertices[random_index] + points.back()) / (float)2;
-                Vector2f mid_point = (vertices[random_index] + points.back()) * 0.5f;
+                Vector2f mid_point = (vertices[random_index] + points.back()) / (float)2;
                 points.push_back(mid_point);
             }
         }
@@ -115,14 +118,14 @@ int main()
         //window.clear();
         for (int i = 0; i < vertices.size(); i++)
         {
-            RectangleShape rect(Vector2f(5, 5));
+            RectangleShape rect(Vector2f(3, 3));
             rect.setPosition(Vector2f(vertices[i].x, vertices[i].y));
             rect.setFillColor(Color::Red);
             window.draw(rect);
         }
         for (int i = 0; i < points.size(); i++)
         {
-            RectangleShape rect(Vector2f(5, 5));
+            RectangleShape rect(Vector2f(3, 3));
             rect.setPosition(Vector2f(points[i].x, points[i].y));
             rect.setFillColor(Color::Red);
             window.draw(rect);
